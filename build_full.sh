@@ -48,6 +48,8 @@ cd android_kernel_xiaomi_sm8250
 # make mrproper 
 mkdir -p out
 make O=out clean
+make distclean
+make oldconfig && make prepare
 
 # args="-j$(nproc --all) O=out ARCH=arm64 SUBARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu-" 
 # args="-j64 O=out ARCH=arm64 SUBARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu-" 
