@@ -1,0 +1,33 @@
+name: Build Kernel
+on:
+  push:
+    branches:    
+      - android12-base
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'version'
+        required: false
+        default: '1.0.0'
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Init Repo
+      run: |
+        cd ~
+        git clone https://github.com/Blankeer/android_kernel_xiaomi_sm8250 -b miui --depth=1 
+    - name: Build With Shell
+      run: |
+        cd ~/android_kernel_xiaomi_sm8250
+        bash build_full.sh
+    - name: Package With AnyKernel
+      run: |
+        cd ~/AnyKernel/
+        cp ../android_kernel_xiaomi_sm8250/out/arch/arm64/boot/Image.gz-dtb  ./
+    - name : Upload artifact
+      uses: actions/upload-artifact@master
+      with:
+        name: k40_kernel_blanke
+        path: /home/runner/AnyKernel/
