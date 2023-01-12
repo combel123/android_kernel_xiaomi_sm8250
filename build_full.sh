@@ -37,11 +37,11 @@ export SUBARCH=arm64
 # export CROSS_COMPILE=aarch64-none-linux-gnu-
 
 
-# git clone https://github.com/osm0sis/AnyKernel3 AnyKernel
-#rm -rf AnyKernel/.git
-#rm -rf AnyKernel/.github
-#rm AnyKernel/anykernel.sh
-#cp op5/anykernel.sh AnyKernel/
+git clone https://github.com/osm0sis/AnyKernel3 AnyKernel
+rm -rf AnyKernel/.git
+rm -rf AnyKernel/.github
+rm AnyKernel/anykernel.sh
+cp android_kernel_xiaomi_sm8250/anykernel.sh AnyKernel/
 
 cd android_kernel_xiaomi_sm8250
 # make clean 
