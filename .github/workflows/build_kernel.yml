@@ -12,7 +12,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
     - name: Init Repo
       run: |
@@ -29,5 +29,5 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: k40_kernel_blanke
+        name: umi_kernel_blanke
         path: /home/runner/AnyKernel/
