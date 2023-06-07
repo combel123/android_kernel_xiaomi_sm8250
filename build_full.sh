@@ -56,5 +56,5 @@ make oldconfig && make prepare
 
 args="ARCH=arm64 SUBARCH=arm64 CC=/home/runner/clang-r445002/bin/clang CLANG_TRIPLE=aarch64-linux-gnu- CROSS_COMPILE=/home/runner/aarch64-linux-android-4.9/bin/aarch64-linux-android- CROSS_COMPILE_ARM32=/home/runner/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-"
 
-make -j$(nproc --all) ${args} O=out alioth_defconfig
+make -j$(nproc --all) ${args} O=out umi_defconfig
 make ${args} CONFIG_DEBUG_SECTION_MISMATCH=y
